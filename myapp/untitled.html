@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+  </head>
+  <body>
+    <h1>try</h1>
+    <script>
+        fetch('http://127.0.0.1:8000/detail/1').then(response => {
+          if (!response.ok) {
+             throw new Error('Network response was not ok');
+          }
+          return response.json(); // This parses the response as JSON
+          })
+         .then(data => {
+          // You can work with the 'data' here
+            console.log(data);
+          })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+
+    </script>
+  </body>
+</html>
